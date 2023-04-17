@@ -13,7 +13,7 @@
   margin: 3rem 0;
 }
 
-.primary,.secondary { margin-bottom: 3rem; }
+.primary, .secondary { margin: 1rem 0 2rem; }
 
 .borders__grid {
   margin: 1rem 0 2rem;
@@ -24,15 +24,12 @@
 }
 
 @media (min-width: 600px) {
-  .detail__footer.container {
-    width: 90vw;
-  }
+  .detail__footer.container, .detail.container { width: 90vw; }
   .detail {
-    width: 90vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 4rem;
+    gap: 6rem;
   }
   .detail__container {
     margin: 1rem 0 2rem;
