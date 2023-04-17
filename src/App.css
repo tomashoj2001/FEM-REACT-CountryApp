@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --background-color: hsl(0, 0%, 98%);
+  --element-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 52%);
+  --text-color: hsl(200, 15%, 8%);
+  --font: 'Nunito Sans', sans-serif;
+  --shadow: 0 0 20px -10px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+  font-family: var(--font);
+}
+
+html{
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+main { background-color: var(--background-color);}
+
+img { display: block; }
+
+input, select {
+  background-color: var(--element-color);
+  border: none;
+  border-radius: .25rem;
+  box-shadow: var(--shadow);
+  color: inherit;
+  display: block;
+  font-weight: 600;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+p { color: var(--text-color); }
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+h1 { font-size: 1.25rem; }
