@@ -43,6 +43,12 @@ button {
   color: var(--text-color);
 }
 
+a {
+  color: var(--text-color);
+  font-family: var(--font);
+  text-decoration: none;
+}
+
 p { color: var(--text-color); }
 
 .container {
@@ -51,3 +57,21 @@ p { color: var(--text-color); }
 }
 
 h1 { font-size: 1.25rem; }
+
+/* HOVER STATES */
+@media (min-width: 600px) {
+  .card,
+  .dark-mode,
+  .detail__btn,
+  .navbar__title {
+    cursor: pointer;
+    transition: transform .25s;
+  }
+
+  .card:hover,
+  .dark-mode:hover,
+  .detail__btn:hover,
+  .navbar__title:hover {
+    transform: scale(1.1);
+  }
+}

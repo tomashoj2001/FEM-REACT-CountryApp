@@ -9,10 +9,10 @@
 
 .dark-mode__dark-btn { filter: invert(1); }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .dark-mode {
     cursor: pointer;
     transition: all .3s;    
   }
   .dark-mode:hover { transform: scale(1.1); }
-}
+} */

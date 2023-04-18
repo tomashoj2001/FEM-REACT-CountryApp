@@ -1,28 +1,20 @@
 import { useContext } from "react"
+import { Link } from "wouter"
 import CountriesContext from "@/context/CountriesContext"
-import Borders from "./Borders"
-import "./index.css"
+import Borders from "@/components/Detail/Borders"
+import useData from "@/hooks/useData"
+import "@/components/Detail/index.css"
 
-export default function Detail({country, setShowDetail}) {
+export default function Detail({ params }) {
   const {countries} = useContext(CountriesContext)
-  
+  const country = decodeURI(params.country)
   const data = countries.find(c => c.common === country)
-  
-  let img = data.flags.svg || data.flags.png
-  let nativeNameCommon = Object.keys(data.nativeName)
-  let currencies = Object.keys(data.currencies)
-  let languages = Object.values(data.languages)
-  
-  nativeNameCommon = data.nativeName[nativeNameCommon[0]].common
-  currencies = data.currencies[currencies[0]].name
-  languages = languages.join(', ')
-
-  const handleClick = () => setShowDetail([false, ""])
+  const {img, nativeNameCommon, currencies, languages} = useData(data)
 
   return (
     <>
       <footer className="detail__footer container">
-        <button className="detail__btn" onClick={handleClick}>back</button>
+        <Link to="/" className="detail__btn">back</Link>
       </footer>
       
       <section className="detail container">
@@ -49,7 +41,7 @@ export default function Detail({country, setShowDetail}) {
 
           {
             data.borders
-            ? <Borders borders={data.borders} countries={countries} setShowDetail={setShowDetail}/>
+            ? <Borders borders={data.borders} countries={countries} />
             : null
           }
 

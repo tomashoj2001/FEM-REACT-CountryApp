@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import SearcherContext from "@/context/SearcherContext"
-import useSearcher from "../../hooks/useSearcher"
+import useSearcher from "@/hooks/useSearcher"
 
 export default function Finder() {
   const { finder, setFinder } = useContext(SearcherContext)

@@ -1,6 +1,6 @@
 import { useState } from "react"
+import useMode from "@/hooks/useMode"
 import "./index.css"
-import useMode from "../../hooks/useMode"
 
 export default function DarkButton() {
   const [mode, setMode] = useState(localStorage.getItem('mode') || 'light')
