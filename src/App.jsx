@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     <footer>
-      <NavBar />
+      <NavBar setShowDetail={setShowDetail} />
     </footer>
 
     <CountriesProvider>

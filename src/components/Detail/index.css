@@ -31,6 +31,11 @@
     align-items: center;
     gap: 6rem;
   }
+  .detail__btn {
+    cursor: pointer;
+    transition: transform .3s;
+  }
+  .detail__btn:hover { transform: scale(1.1);}
   .detail__container {
     margin: 1rem 0 2rem;
     display: grid;
@@ -39,10 +44,15 @@
   }
   .details {margin-bottom: 0;}
   .secondary { text-align: right; }
+  
   .borders {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 1rem;
+  }
+  .borders h2 {
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
   .borders__grid { margin: 0; }
 }
