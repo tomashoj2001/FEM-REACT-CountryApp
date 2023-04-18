@@ -3,15 +3,20 @@ import { Link } from "wouter"
 import { Helmet } from "react-helmet"
 
 import CountriesContext from "@/context/CountriesContext"
-import Borders from "@/components/Detail/Borders"
 import useData from "@/hooks/useData"
+import Borders from "@/components/Detail/Borders"
+import Error from "@/pages/Error"
 
 import "@/components/Detail/index.css"
+import useCountries from "@/hooks/useCountries"
 
 export default function Detail({ params }) {
-  const {countries} = useContext(CountriesContext)
+  const {countries} = useCountries()
   const country = decodeURI(params.country)
   const data = countries.find(c => c.common === country)
+
+  if (data === undefined) return <Error search={params.country} />
+
   const {img, nativeNameCommon, currencies, languages} = useData(data)
 
   return (

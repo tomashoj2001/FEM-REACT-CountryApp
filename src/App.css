@@ -58,6 +58,13 @@ p { color: var(--text-color); }
 
 h1 { font-size: 1.25rem; }
 
+.error {
+  margin: 40vh 0;
+  width: 100%;
+  text-align: center;
+}
+.error h2 { margin: 1rem 0; }
+
 /* HOVER STATES */
 @media (min-width: 600px) {
   .card,
