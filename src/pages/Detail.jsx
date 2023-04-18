@@ -1,8 +1,11 @@
 import { useContext } from "react"
 import { Link } from "wouter"
+import { Helmet } from "react-helmet"
+
 import CountriesContext from "@/context/CountriesContext"
 import Borders from "@/components/Detail/Borders"
 import useData from "@/hooks/useData"
+
 import "@/components/Detail/index.css"
 
 export default function Detail({ params }) {
@@ -13,6 +16,10 @@ export default function Detail({ params }) {
 
   return (
     <>
+      <Helmet>
+        <title>{data.common} | Country App</title>
+      </Helmet>
+
       <footer className="detail__footer container">
         <Link to="/" className="detail__btn">back</Link>
       </footer>
