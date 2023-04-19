@@ -1,14 +1,20 @@
-import "./index.css"
+import { useContext } from "react"
 import Country from "./Country"
-import useCountries from "@/hooks/useCountries"
+import NotFound from "./NotFound"
+import CountriesContext from "@/context/CountriesContext"
+import "./index.css"
+import useSearcher from "@/hooks/useSearcher"
 
 export default function Countries ({ setShowDetail }) {
-  const {countries} = useCountries()
+  const {countries} = useContext(CountriesContext)
+  // const {countries} = useSearcher()
   
   return(
     <section className="countries">
       {
-        countries.map(country => <Country key={country.common} country={country} setShowDetail={setShowDetail} />)
+        countries.length > 0
+          ? countries.map(country => <Country key={country.common} country={country} setShowDetail={setShowDetail} />)
+          : <NotFound />
       }
     </section>
   )

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 
 import CountriesContext from "@/context/CountriesContext"
 import useData from "@/hooks/useData"
-import Borders from "@/components/Detail/Borders"
+import Borders from "./Borders"
 
 import "./index.css"
 

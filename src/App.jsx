@@ -11,7 +11,7 @@ import './App.css'
 
 function App() {
   const [showDetail, setShowDetail] = useState([false, ""])
-
+  
   return (
     <>
     <footer>

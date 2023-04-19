@@ -16,4 +16,6 @@ export default function useSearcher() {
     ) 
       
   }, [filter, finder])
+
+  // return { countries }
 }

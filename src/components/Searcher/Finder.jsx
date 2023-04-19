@@ -5,8 +5,6 @@ import useSearcher from "@/hooks/useSearcher"
 export default function Finder() {
   const { finder, setFinder } = useContext(SearcherContext)
 
-  useSearcher()
-
   return (
     <input 
       className="searcher__input"
