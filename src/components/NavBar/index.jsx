@@ -1,12 +1,13 @@
-import { Link } from "wouter";
 import DarkButton from "../DarkButton";
 import "./index.css"
 
-export default function NavBar() {
+export default function NavBar({ setShowDetail }) {
+  const handleClick = () => setShowDetail([false, ""])
+
   return (
     <nav className="navbar">
       <div className="container">
-        <Link to="/" className="navbar__title">Where in the world?</Link>
+        <button className="navbar__title" onClick={handleClick}>Where in the world?</button>
         <DarkButton />
       </div>
     </nav>

@@ -1,10 +1,10 @@
-import { Link } from "wouter"
-
-export default function Country ({ country }) {
+export default function Country ({ country, setShowDetail }) {
   const img = country.flags.svg || country.flags.png
+
+  const handleClick = () => setShowDetail([true, `${country.common}`])
   
   return (
-    <Link to={`/${country.common}`} className="card">
+    <section onClick={handleClick} className="card">
       <img src={img} alt={`${country.common} flag`} />
       <div className="card__info details">
         <h2>{country.common}</h2>
@@ -12,6 +12,6 @@ export default function Country ({ country }) {
         <p>Region: <span>{country.region}</span></p>
         <p>Capital: <span>{country.capital}</span></p>
       </div>
-    </Link>
+    </section>
   )
 }

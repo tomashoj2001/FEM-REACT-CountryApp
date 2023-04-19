@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet"
 import Searcher from "@/components/Searcher"
 import Countries from "@/components/Countries"
 
-export default function Home () {
+export default function Home ({ setShowDetail }) {
   return (
     <>
       <Helmet>
@@ -10,7 +10,7 @@ export default function Home () {
       </Helmet>
 
       <Searcher />
-      <Countries />
+      <Countries setShowDetail={setShowDetail}/>
     </>
   )
 }

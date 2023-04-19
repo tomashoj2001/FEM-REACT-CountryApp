@@ -1,23 +1,18 @@
 import { useContext } from "react"
-import { Link } from "wouter"
 import { Helmet } from "react-helmet"
 
 import CountriesContext from "@/context/CountriesContext"
 import useData from "@/hooks/useData"
 import Borders from "@/components/Detail/Borders"
-import Error from "@/pages/Error"
 
-import "@/components/Detail/index.css"
-import useCountries from "@/hooks/useCountries"
+import "./index.css"
 
-export default function Detail({ params }) {
-  const {countries} = useCountries()
-  const country = decodeURI(params.country)
+export default function Detail({ country, setShowDetail }) {
+  const {countries} = useContext(CountriesContext)
   const data = countries.find(c => c.common === country)
-
-  if (data === undefined) return <Error search={params.country} />
-
   const {img, nativeNameCommon, currencies, languages} = useData(data)
+
+  const handleClick = () => setShowDetail([false, ""])
 
   return (
     <>
@@ -26,7 +21,7 @@ export default function Detail({ params }) {
       </Helmet>
 
       <footer className="detail__footer container">
-        <Link to="/" className="detail__btn">back</Link>
+        <button onClick={handleClick} className="detail__btn">back</button>
       </footer>
       
       <section className="detail container">
@@ -53,7 +48,7 @@ export default function Detail({ params }) {
 
           {
             data.borders
-            ? <Borders borders={data.borders} countries={countries} />
+            ? <Borders borders={data.borders} countries={countries} setShowDetail={setShowDetail} />
             : null
           }
 

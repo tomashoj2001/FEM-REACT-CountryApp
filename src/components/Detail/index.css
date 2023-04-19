@@ -6,6 +6,7 @@
 .detail__btn {
   background-color: var(--element-color);
   padding: .5rem 1.5rem;
+  box-shadow: var(--shadow);
 }
 
 .detail__flag {

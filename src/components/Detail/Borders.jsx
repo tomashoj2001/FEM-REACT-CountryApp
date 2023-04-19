@@ -1,9 +1,9 @@
-import { Link } from "wouter"
-
-export default function Borders ({ borders, countries }) {
+export default function Borders ({ borders, countries, setShowDetail }) {
   const fullName = countries
     .filter(c => borders.includes(c.cca3))
     .map(c => c.common)
+
+  const handleClick = (name) => setShowDetail([true, name])
 
   return (
     <section className="borders">
@@ -13,9 +13,9 @@ export default function Borders ({ borders, countries }) {
       {
         fullName.map(name => {
           return(
-            <Link to={`/${name}`} className="detail__btn" key={name}>
+            <button onClick={() => handleClick(name)} className="detail__btn" key={name}>
               {name}
-            </Link>
+            </button>
           )
         })
       }

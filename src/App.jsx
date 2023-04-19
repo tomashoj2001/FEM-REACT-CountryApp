@@ -1,29 +1,32 @@
-import { Route, Switch } from 'wouter'
+import { useState } from 'react'
 
 import { CountriesProvider } from '@/context/CountriesContext'
 import { SearcherProvider } from '@/context/SearcherContext'
 
 import NavBar from '@/components/NavBar'
-import Home from '@/pages/Home'
-import Detail from '@/pages/Detail'
+import Home from '@/components/Home'
+import Detail from '@/components/Detail'
 
 import './App.css'
 
 function App() {
+  const [showDetail, setShowDetail] = useState([false, ""])
+
   return (
     <>
     <footer>
-      <NavBar />
+      <NavBar setShowDetail={setShowDetail} />
     </footer>
 
     <CountriesProvider>
       <SearcherProvider>
 
         <main className='container'>
-          <Switch>
-            <Route component={Home} path='/' />
-            <Route component={Detail} path='/:country' />
-          </Switch>
+          {
+            showDetail[0]
+              ? <Detail country={showDetail[1]} setShowDetail={setShowDetail} />
+              : <Home setShowDetail={setShowDetail} />
+          }
         </main>
 
       </SearcherProvider>
