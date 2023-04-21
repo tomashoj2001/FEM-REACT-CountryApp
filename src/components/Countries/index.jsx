@@ -3,11 +3,9 @@ import Country from "./Country"
 import NotFound from "./NotFound"
 import CountriesContext from "@/context/CountriesContext"
 import "./index.css"
-import useSearcher from "@/hooks/useSearcher"
 
 export default function Countries ({ setShowDetail }) {
   const {countries} = useContext(CountriesContext)
-  // const {countries} = useSearcher()
   
   return(
     <section className="countries">

@@ -19,6 +19,6 @@ export default function useMode(mode, setMode) {
   }
 
   const handleClick = () => setMode(mode === 'light' ? 'dark' : 'light')
-
+  console.log('useMode')
   return {handleClick}
 }

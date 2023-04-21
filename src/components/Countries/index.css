@@ -8,7 +8,7 @@
 
 .card {
   width: 85%;
-  max-width: 310px;
+  max-width: 300px;
   background-color: var(--element-color);
   overflow: hidden;
   border-radius: .25rem;

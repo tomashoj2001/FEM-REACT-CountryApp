@@ -7,6 +7,6 @@ export default function useData(data) {
   nativeNameCommon = data.nativeName[nativeNameCommon[0]].common
   currencies = data.currencies[currencies[0]].name
   languages = languages.join(', ')
-
+  console.log('useData')
   return {img, nativeNameCommon, currencies, languages}
 }

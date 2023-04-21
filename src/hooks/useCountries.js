@@ -10,8 +10,9 @@ export default function useCountries() {
       .then(country => {
         setGlobalCountries(country)
         setCountries(country)
+        console.log('useCountries-effect')
       })
   }, [])
-
+  console.log('useCountries')
   return { countries }
 }
