@@ -16,6 +16,4 @@ export default function useSearcher() {
     ) 
       
   }, [filter, finder])
-  console.log('useSearcher')
-  // return { countries }
 }

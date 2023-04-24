@@ -5,7 +5,6 @@ import useCountries from "@/hooks/useCountries"
 
 export default function Home ({ setShowDetail }) {
   const {countries} = useCountries()
-  // console.log(countries.length)
 
   return (
     <>
