@@ -1,4 +1,4 @@
-.detail__footer.container{ 
+.detail__header.container{ 
   width: 85vw;
   margin-top: 2rem;
 }
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 600px) {
-  .detail__footer.container, .detail.container { width: 90vw; }
+  .detail__header.container, .detail.container { width: 90vw; }
   .detail {
     display: grid;
     grid-template-columns: 1fr 1fr;

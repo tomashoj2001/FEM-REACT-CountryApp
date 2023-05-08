@@ -20,9 +20,9 @@ export default function Detail({ country, setShowDetail }) {
         <title>{data.common} | Country App</title>
       </Helmet>
 
-      <footer className="detail__footer container">
+      <header className="detail__header container">
         <button onClick={handleClick} className="detail__btn">back</button>
-      </footer>
+      </header>
       
       <section className="detail container">
         <img src={img} alt={`${country} flag`} className="detail__flag" />
