@@ -14,9 +14,9 @@ function App() {
   
   return (
     <>
-    <footer>
+    <header>
       <NavBar setShowDetail={setShowDetail} />
-    </footer>
+    </header>
 
     <CountriesProvider>
       <SearcherProvider>
