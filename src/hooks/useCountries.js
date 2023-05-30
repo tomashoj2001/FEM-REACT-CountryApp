@@ -8,8 +8,13 @@ export default function useCountries() {
   useEffect(() => {
     getCountries()
       .then(country => {
-        setGlobalCountries(country)
-        setCountries(country)
+        const sortedCountries = country.sort((a, b) => {
+          if (a.common < b.common) return -1
+          if (a.common > b.common) return 1
+          return 0
+        })
+        setGlobalCountries(sortedCountries)
+        setCountries(sortedCountries)
       })
   }, [])
 
