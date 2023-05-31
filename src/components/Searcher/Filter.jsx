@@ -20,7 +20,7 @@ export default function Filter({ searcher, setSearcher}) {
   const handleClick = (e) => setSearcher({...searcher, filter: e.target.value})
    
   return (
-    <select onClick={handleClick} name="region-select" id="region-select">
+    <select onChange={handleClick} name="region-select" id="region-select">
       <option value="">Filter by Region</option>
       <option value="Africa">Africa</option>
       <option value="Americas">Americas</option>
