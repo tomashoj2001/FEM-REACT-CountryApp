@@ -1,19 +1,10 @@
-import { useContext, useEffect } from "react"
-import SearcherContext from "@/context/SearcherContext"
-import CountriesContext from "@/context/CountriesContext"
+export default function useSearcher(countries, searcher) {
+  const { filter, finder } = searcher
 
-export default function useSearcher() {
-  const {globalCountries, setCountries} = useContext(CountriesContext)
-  const {filter, finder} = useContext(SearcherContext)
-
-  useEffect(() => {
-    let finderLowerCase = finder.toLowerCase()
-
-    setCountries(
-      globalCountries
+  let finderLowerCase = finder.toLowerCase()
+  let filteredCountries = countries
         .filter(country => filter !== "" ? country.region === filter : country)
         .filter(country => finder !== "" ? country.common.toLowerCase().includes(finderLowerCase) : country)
-    ) 
-      
-  }, [filter, finder])
+
+  return { filteredCountries }
 }

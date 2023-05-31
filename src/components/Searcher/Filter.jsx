@@ -1,10 +1,23 @@
-import { useContext } from "react"
-import SearcherContext from "@/context/SearcherContext"
+// import { useContext } from "react"
+// import SearcherContext from "@/context/SearcherContext"
 
-export default function Filter() {
-  const { setFilter } = useContext(SearcherContext)
+import { useEffect } from "react"
 
-  const handleClick = (e) => setFilter(e.target.value)
+// import { useEffect } from "react"
+
+export default function Filter({ searcher, setSearcher}) {
+  // const { setFilter } = useContext(SearcherContext)
+  
+  const options = [...document.querySelectorAll('#region-select option')]
+  useEffect(() => {
+    options.forEach(el => {
+      // console.log(el.selected)
+      if (el.selected) el.selected = false
+      if (el.value === searcher.filter) el.selected = true
+    })
+  }, [searcher])
+  
+  const handleClick = (e) => setSearcher({...searcher, filter: e.target.value})
    
   return (
     <select onClick={handleClick} name="region-select" id="region-select">

@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet"
 import Searcher from "@/components/Searcher"
 import Countries from "@/components/Countries"
-import useCountries from "@/hooks/useCountries"
+import { useEffect, useState } from "react"
 
-export default function Home ({ setShowDetail }) {
-  const {countries} = useCountries()
+export default function Home ({ countries, setShowDetail, searcher, setSearcher}) {
+  if (!countries) {
+    return <h1>Loading...</h1>
+  }
 
   return (
     <>
@@ -12,8 +14,8 @@ export default function Home ({ setShowDetail }) {
         <title>Home | Country App</title>
       </Helmet>
 
-      <Searcher />
-      <Countries setShowDetail={setShowDetail}/>
+      <Searcher searcher={searcher} setSearcher={setSearcher} />
+      <Countries countries={countries} setShowDetail={setShowDetail} searcher={searcher} />
     </>
   )
 }

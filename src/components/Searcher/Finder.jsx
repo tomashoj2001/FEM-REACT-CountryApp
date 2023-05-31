@@ -2,15 +2,20 @@ import { useContext } from "react"
 import SearcherContext from "@/context/SearcherContext"
 import useSearcher from "@/hooks/useSearcher"
 
-export default function Finder() {
-  const { finder, setFinder } = useContext(SearcherContext)
+export default function Finder({ searcher, setSearcher }) {
+  // const { finder, setFinder } = useContext(SearcherContext)
+  const {finder} = searcher
+
+  const handleChange = (e) => {
+    setSearcher({...searcher, finder: e.target.value})
+  }
 
   return (
     <input 
       className="searcher__input"
       type="text"
       value={finder}
-      onChange={(e) => setFinder(e.target.value)}
+      onChange={handleChange}
       placeholder="Search for a country..."
     />
   )

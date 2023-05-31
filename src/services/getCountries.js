@@ -17,4 +17,11 @@ export default function getCountries() {
   return fetch(apiURL)
     .then(res => res.json())
     .then(filterData)
+    .then(country => {
+      return country.sort((a, b) => {
+        if (a.common < b.common) return -1
+        if (a.common > b.common) return 1
+        return 0
+        })
+    })
 }

@@ -1,14 +1,14 @@
 import { useContext } from "react"
 import { Helmet } from "react-helmet"
 
-import CountriesContext from "@/context/CountriesContext"
+// import CountriesContext from "@/context/CountriesContext"
 import useData from "@/hooks/useData"
 import Borders from "./Borders"
 
 import "./index.css"
 
-export default function Detail({ country, setShowDetail }) {
-  const {countries} = useContext(CountriesContext)
+export default function Detail({ country, countries, setShowDetail }) {
+  // const {countries} = useContext(CountriesContext)
   const data = countries.find(c => c.common === country)
   const {img, nativeNameCommon, currencies, languages} = useData(data)
 
