@@ -1,9 +1,5 @@
-import { useContext } from "react"
-// import SearcherContext from "@/context/SearcherContext"
-
 export default function NotFound({ searcher }) {
   const {filter, finder} = searcher
-  // const {finder} = useContext(SearcherContext)
   return (
     <>
       <h2 className="not-found">

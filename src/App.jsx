@@ -1,23 +1,14 @@
 import { useState, useEffect} from 'react'
-
-// import { CountriesProvider } from '@/context/CountriesContext'
-// import { SearcherProvider } from '@/context/SearcherContext'
-
 import NavBar from '@/components/NavBar'
 import Home from '@/components/Home'
 import Detail from '@/components/Detail'
-
-import './App.css'
-// import useCountries from './hooks/useCountries'
 import getCountries from './services/getCountries'
+import './App.css'
 
 function App() {
   const [showDetail, setShowDetail] = useState([false, ""])  
   const [countries, setCountries] = useState()
-  const [searcher, setSearcher] = useState({
-    filter: "",
-    finder: ""
-  })
+  const [searcher, setSearcher] = useState({filter: "", finder: ""})
 
   useEffect(() => {
     async function fetchData() {
